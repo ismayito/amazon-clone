@@ -50,3 +50,15 @@
     font-size: 13px;
     font-weight:800;
 }
+.header_basket{
+    color:white;
+    display:flex;
+    flex:1;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+.shopping_count{
+    margin-left: 10px;
+    margin-right: 10px;
+}
