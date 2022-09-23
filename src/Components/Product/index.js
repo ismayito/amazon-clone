@@ -1,8 +1,21 @@
 import Product from "./Product.css"
 
  import React from 'react'
+import { useStateValue } from "../Context"
  
- function index({ id,title,image, price,rating})  {
+ function Index({ id,title,image, price,rating})  {
+   const [{basket},dispatch] = useStateValue();
+  // console.log(basket) 
+
+
+   const addtoBasket = () => {
+    dispatch({
+      type:"ADD_TO_BASKET",
+      item:{
+        id,title,image,price, rating
+      }
+    })
+   }
    return (
      <div className="product">
         <div className="product__info">
@@ -18,10 +31,10 @@ import Product from "./Product.css"
         </div>
         
         <img src={image} alt="homeimage"></img>
-        <button>Add to cart</button>
+        <button onClick={addtoBasket}>Add to cart</button>
      </div>
 
    )
  }
  
- export default index
+ export default Index

@@ -1,0 +1,15 @@
+.checkout__button{
+    background: #f0c14b;
+    width: 100% ;
+    align-items:center;
+    justify-content: center;
+    font-weight:900;
+    border-radius: 2px;
+    border-color: lightslategray;
+    border: 1px solid;
+    margin-top: 5px;
+}
+.subtotal__gift{
+    display: flex;
+    align-items: center;
+}
