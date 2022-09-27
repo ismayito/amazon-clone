@@ -8,17 +8,22 @@ function Index(){
     const navigate = useNavigate();
     const [email, setEmail]=useState("");
     const [password, setPassword]=useState("");
-    const Signin=()=>{
-        email.preventDefault();
+    const Signin=(e)=>{
+        e.preventDefault();
+        auth.
+        signInWithEmailAndPassword(email,password)
+        .then((auth)=>{
+            navigate("/");
+        }).catch(error=>alert(error.message))
     }
     const CreateAccount=(e)=>{
         e.preventDefault();
         auth.createUserWithEmailAndPassword(email,password).then((auth)=>{
             console.log(auth);
             if(auth){
-                navigate.push("/")
+                navigate("/")
             }
-        }).catch(error=>alert(error.message))
+        }).catch(error=>alert(error.message));
         //create amazon account
     }
     return(

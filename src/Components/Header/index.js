@@ -4,10 +4,16 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link } from "react-router-dom";
 import { useStateValue } from "../Context";
+import { auth } from "../../firebase";
 
 
 function Index() {
-    const [{basket},action]=useStateValue()
+    const [{basket,user},action]=useStateValue();
+    const handlelogin=()=>{
+        if (user){
+            auth.signOut();
+        }
+    }
   return (
     <div className="header">
         <Link to='/'>
@@ -23,10 +29,10 @@ function Index() {
         
         
         <div className="header_nav">
-        <Link to="/login">
-            <div className="header_option">
+        <Link to={!user && "/login"}>
+            <div  onClick={handlelogin} className="header_option">
                 <span className="option1">Hello Guest</span>
-                <span className="option2">Sign in</span>
+                <span className="option2">{user ? "Sign out":"Sign in"}</span>
             </div>
             </Link>
            
