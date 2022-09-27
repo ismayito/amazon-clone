@@ -14,6 +14,11 @@ function Index() {
             auth.signOut();
         }
     }
+    const displayName=()=>{
+        return(
+            user.email.substring(0,user.email.indexOf("@"))
+        )
+    }
   return (
     <div className="header">
         <Link to='/'>
@@ -31,7 +36,7 @@ function Index() {
         <div className="header_nav">
         <Link to={!user && "/login"}>
             <div  onClick={handlelogin} className="header_option">
-                <span className="option1">Hello Guest</span>
+                <span className="option1">Hello {user? displayName():"guest"}</span>
                 <span className="option2">{user ? "Sign out":"Sign in"}</span>
             </div>
             </Link>
