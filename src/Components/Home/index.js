@@ -1,10 +1,13 @@
 import Home from "./Home.css";
-import Product from "../Product"
+import Product from "../Product";
+import Header from "../Header"
 
 import React from 'react'
 
 function index({id,title,image,price,}) {
   return (
+    <>
+    <Header></Header>
     <div div className="home">
         
         <div className="home__container">
@@ -60,6 +63,7 @@ function index({id,title,image,price,}) {
         
     </div>
     </div></div>
+    </>
 
   )
 }

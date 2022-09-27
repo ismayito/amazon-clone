@@ -16,6 +16,20 @@ const reducer = (state,action)=>{
             }
             
         };
+        case"REMOVE_BASKET_ITEM":{
+            const index=state.basket.findIndex(basketitem=>basketitem.id!==action.id);
+            let newBasket=[...state.basket];
+            if(index>=0){
+                newBasket.splice(index,1)
+
+            }else{
+                console.warn(`there are no items in the basket to be deleted (${action.id} doesnot exist)`)
+            }
+            return{
+                ...state,
+                basket:newBasket,
+            }
+        }
  
 }}
  export default reducer;
