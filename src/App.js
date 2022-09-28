@@ -2,7 +2,8 @@
 import './App.css';
 import Header from './Components/Header';
 import Home from"./Components/Home";
-import Checkout from "./Components/Checkout"
+import Checkout from "./Components/Checkout";
+import Payment from "./Components/Payment"
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Login from './Components/Login';
 import { useEffect } from 'react';
@@ -43,6 +44,11 @@ function App() {
   </Routes>
   <Routes>
     <Route  exact path="/checkout" element={<Checkout/>}>
+    </Route>
+  </Routes>
+  <Routes>
+    <Route path="/payment" element={<Payment></Payment>}>
+    
     </Route>
   </Routes>
       </div>

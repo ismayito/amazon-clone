@@ -4,10 +4,13 @@
   import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../Context";
 import { getBasketTotal } from "../Context/reducer";
+import { useNavigate } from "react-router";
  
  function Index(){
     const [{basket},dispatch] = useStateValue();
     console.log(basket);
+
+    const navigate=useNavigate();
    
 
   
@@ -34,7 +37,7 @@ import { getBasketTotal } from "../Context/reducer";
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button className="checkout__button">Proceed to checkout</button>
+      <button onClick={e=>navigate("/payment")} className="checkout__button">Proceed to checkout</button>
      </div>
    )
  }
