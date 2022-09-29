@@ -21,7 +21,7 @@
 .payment__title{
     flex:0.2
 }
-.payment__add{
+.payment__add,.payment__items,.pay__details{
     flex:0.8
 }
 
